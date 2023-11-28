@@ -1358,39 +1358,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-KalkulatorGCDnLCM
-# storage
-db|KalkulatorGCDnLCM.(0).cnf
-db|KalkulatorGCDnLCM.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-kalkulatorgcdnlcm.vhd
-a7cebb4dc8bc6ab3ed245faa844dad7b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 IO
 # storage
 db|KalkulatorGCDnLCM.(3).cnf
@@ -1454,6 +1421,39 @@ USR
 }
 # hierarchies {
 IO:IO_COMPONENT
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+KalkulatorGCDnLCM
+# storage
+db|KalkulatorGCDnLCM.(0).cnf
+db|KalkulatorGCDnLCM.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+kalkulatorgcdnlcm.vhd
+7aee8cb871a73b56c0245ac6997a70
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -1548,48 +1548,48 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-gcdfsm.vhd
-621d474cbb8fd33c98ef932fd22d84c
-fsm_controller.vhd
-a586fa4b8e7fca39c5d33c65df273518
-bcdtoascii.vhd
-3c553c188b83469d60a28cbf72e67492
-gcdlcm.vhd
-d7fe7732f288adf1ca68f6790ce749
-my_uart_top.vhd
-26be3b369b442c5dc28c812fe33ed270
-kalkulatorgcdnlcm.vhd
-a7cebb4dc8bc6ab3ed245faa844dad7b
-io.vhd
-735e68b3f33fceeafe0df701926bbc
-fsm_io.vhd
-f1f613539c45cc5e13bfd2d3191f3e60
-sender.vhd
-b8185628694d8f9b69f7fd2acacffff6
-lcm.vhd
-99f53a815dea31569eb55d94afe8f3
 gcd_ascii_converter.vhd
 46f05d6cdb9fa579f685dcd2747d5572
+my_uart_top.vhd
+26be3b369b442c5dc28c812fe33ed270
 lcmfsm.vhd
 a2d6a170a2804ba8997f5e2e64ad1ad2
-bcdfrom8bit.vhd
-9b9ded44591ac2c80dd957f5b43a1a
-my_uart_rx.vhd
-89c384c011c27efb80b6867c765dc852
-speed_select.vhd
-32cea0dcbe17b23598de6b917515baca
-lcm_ascii_converter.vhd
-63c8e910c875414dd51c162ae78e
+fsm_io.vhd
+f1f613539c45cc5e13bfd2d3191f3e60
+bcdtoascii.vhd
+3c553c188b83469d60a28cbf72e67492
 gcd.vhd
 033dea37773dc3785c3b6c32025dc
+lcm_ascii_converter.vhd
+63c8e910c875414dd51c162ae78e
+bcdfrom8bit.vhd
+9b9ded44591ac2c80dd957f5b43a1a
+gcdfsm.vhd
+621d474cbb8fd33c98ef932fd22d84c
+lcm.vhd
+99f53a815dea31569eb55d94afe8f3
+my_uart_tx.vhd
+74c3a6ffee47037a7a0c1108b8383
+fsm_controller.vhd
+a586fa4b8e7fca39c5d33c65df273518
+gcdlcm.vhd
+d7fe7732f288adf1ca68f6790ce749
+kalkulatorgcdnlcm.vhd
+7aee8cb871a73b56c0245ac6997a70
+speed_select.vhd
+32cea0dcbe17b23598de6b917515baca
+sender.vhd
+b8185628694d8f9b69f7fd2acacffff6
+io.vhd
+735e68b3f33fceeafe0df701926bbc
+my_uart_rx.vhd
+89c384c011c27efb80b6867c765dc852
+receiver.vhd
+1fa7a5982a9b4914860717a4250a737
 bcdfrom32bit.vhd
 5748e13293cdb9656de9d2b198a4da
 converter32.vhd
 d4e1e5e2aed859a2be82fe493bff53b
-my_uart_tx.vhd
-74c3a6ffee47037a7a0c1108b8383
-receiver.vhd
-1fa7a5982a9b4914860717a4250a737
 }
 # hierarchies {
 IO:IO_COMPONENT|sender:SenderComponent
@@ -1659,48 +1659,48 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-gcdfsm.vhd
-621d474cbb8fd33c98ef932fd22d84c
-fsm_controller.vhd
-a586fa4b8e7fca39c5d33c65df273518
-bcdtoascii.vhd
-3c553c188b83469d60a28cbf72e67492
-gcdlcm.vhd
-d7fe7732f288adf1ca68f6790ce749
-my_uart_top.vhd
-26be3b369b442c5dc28c812fe33ed270
-kalkulatorgcdnlcm.vhd
-a7cebb4dc8bc6ab3ed245faa844dad7b
-io.vhd
-735e68b3f33fceeafe0df701926bbc
-fsm_io.vhd
-f1f613539c45cc5e13bfd2d3191f3e60
-sender.vhd
-b8185628694d8f9b69f7fd2acacffff6
-lcm.vhd
-99f53a815dea31569eb55d94afe8f3
 gcd_ascii_converter.vhd
 46f05d6cdb9fa579f685dcd2747d5572
+my_uart_top.vhd
+26be3b369b442c5dc28c812fe33ed270
 lcmfsm.vhd
 a2d6a170a2804ba8997f5e2e64ad1ad2
-bcdfrom8bit.vhd
-9b9ded44591ac2c80dd957f5b43a1a
-my_uart_rx.vhd
-89c384c011c27efb80b6867c765dc852
-speed_select.vhd
-32cea0dcbe17b23598de6b917515baca
-lcm_ascii_converter.vhd
-63c8e910c875414dd51c162ae78e
+fsm_io.vhd
+f1f613539c45cc5e13bfd2d3191f3e60
+bcdtoascii.vhd
+3c553c188b83469d60a28cbf72e67492
 gcd.vhd
 033dea37773dc3785c3b6c32025dc
+lcm_ascii_converter.vhd
+63c8e910c875414dd51c162ae78e
+bcdfrom8bit.vhd
+9b9ded44591ac2c80dd957f5b43a1a
+gcdfsm.vhd
+621d474cbb8fd33c98ef932fd22d84c
+lcm.vhd
+99f53a815dea31569eb55d94afe8f3
+my_uart_tx.vhd
+74c3a6ffee47037a7a0c1108b8383
+fsm_controller.vhd
+a586fa4b8e7fca39c5d33c65df273518
+gcdlcm.vhd
+d7fe7732f288adf1ca68f6790ce749
+kalkulatorgcdnlcm.vhd
+7aee8cb871a73b56c0245ac6997a70
+speed_select.vhd
+32cea0dcbe17b23598de6b917515baca
+sender.vhd
+b8185628694d8f9b69f7fd2acacffff6
+io.vhd
+735e68b3f33fceeafe0df701926bbc
+my_uart_rx.vhd
+89c384c011c27efb80b6867c765dc852
+receiver.vhd
+1fa7a5982a9b4914860717a4250a737
 bcdfrom32bit.vhd
 5748e13293cdb9656de9d2b198a4da
 converter32.vhd
 d4e1e5e2aed859a2be82fe493bff53b
-my_uart_tx.vhd
-74c3a6ffee47037a7a0c1108b8383
-receiver.vhd
-1fa7a5982a9b4914860717a4250a737
 }
 # hierarchies {
 gcdlcm:PROCESS_COMPONENT
@@ -1762,48 +1762,48 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-gcdfsm.vhd
-621d474cbb8fd33c98ef932fd22d84c
-fsm_controller.vhd
-a586fa4b8e7fca39c5d33c65df273518
-bcdtoascii.vhd
-3c553c188b83469d60a28cbf72e67492
-gcdlcm.vhd
-d7fe7732f288adf1ca68f6790ce749
-my_uart_top.vhd
-26be3b369b442c5dc28c812fe33ed270
-kalkulatorgcdnlcm.vhd
-a7cebb4dc8bc6ab3ed245faa844dad7b
-io.vhd
-735e68b3f33fceeafe0df701926bbc
-fsm_io.vhd
-f1f613539c45cc5e13bfd2d3191f3e60
-sender.vhd
-b8185628694d8f9b69f7fd2acacffff6
-lcm.vhd
-99f53a815dea31569eb55d94afe8f3
 gcd_ascii_converter.vhd
 46f05d6cdb9fa579f685dcd2747d5572
+my_uart_top.vhd
+26be3b369b442c5dc28c812fe33ed270
 lcmfsm.vhd
 a2d6a170a2804ba8997f5e2e64ad1ad2
-bcdfrom8bit.vhd
-9b9ded44591ac2c80dd957f5b43a1a
-my_uart_rx.vhd
-89c384c011c27efb80b6867c765dc852
-speed_select.vhd
-32cea0dcbe17b23598de6b917515baca
-lcm_ascii_converter.vhd
-63c8e910c875414dd51c162ae78e
+fsm_io.vhd
+f1f613539c45cc5e13bfd2d3191f3e60
+bcdtoascii.vhd
+3c553c188b83469d60a28cbf72e67492
 gcd.vhd
 033dea37773dc3785c3b6c32025dc
+lcm_ascii_converter.vhd
+63c8e910c875414dd51c162ae78e
+bcdfrom8bit.vhd
+9b9ded44591ac2c80dd957f5b43a1a
+gcdfsm.vhd
+621d474cbb8fd33c98ef932fd22d84c
+lcm.vhd
+99f53a815dea31569eb55d94afe8f3
+my_uart_tx.vhd
+74c3a6ffee47037a7a0c1108b8383
+fsm_controller.vhd
+a586fa4b8e7fca39c5d33c65df273518
+gcdlcm.vhd
+d7fe7732f288adf1ca68f6790ce749
+kalkulatorgcdnlcm.vhd
+7aee8cb871a73b56c0245ac6997a70
+speed_select.vhd
+32cea0dcbe17b23598de6b917515baca
+sender.vhd
+b8185628694d8f9b69f7fd2acacffff6
+io.vhd
+735e68b3f33fceeafe0df701926bbc
+my_uart_rx.vhd
+89c384c011c27efb80b6867c765dc852
+receiver.vhd
+1fa7a5982a9b4914860717a4250a737
 bcdfrom32bit.vhd
 5748e13293cdb9656de9d2b198a4da
 converter32.vhd
 d4e1e5e2aed859a2be82fe493bff53b
-my_uart_tx.vhd
-74c3a6ffee47037a7a0c1108b8383
-receiver.vhd
-1fa7a5982a9b4914860717a4250a737
 }
 # hierarchies {
 gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM
@@ -1865,48 +1865,48 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-gcdfsm.vhd
-621d474cbb8fd33c98ef932fd22d84c
-fsm_controller.vhd
-a586fa4b8e7fca39c5d33c65df273518
-bcdtoascii.vhd
-3c553c188b83469d60a28cbf72e67492
-gcdlcm.vhd
-d7fe7732f288adf1ca68f6790ce749
-my_uart_top.vhd
-26be3b369b442c5dc28c812fe33ed270
-kalkulatorgcdnlcm.vhd
-a7cebb4dc8bc6ab3ed245faa844dad7b
-io.vhd
-735e68b3f33fceeafe0df701926bbc
-fsm_io.vhd
-f1f613539c45cc5e13bfd2d3191f3e60
-sender.vhd
-b8185628694d8f9b69f7fd2acacffff6
-lcm.vhd
-99f53a815dea31569eb55d94afe8f3
 gcd_ascii_converter.vhd
 46f05d6cdb9fa579f685dcd2747d5572
+my_uart_top.vhd
+26be3b369b442c5dc28c812fe33ed270
 lcmfsm.vhd
 a2d6a170a2804ba8997f5e2e64ad1ad2
-bcdfrom8bit.vhd
-9b9ded44591ac2c80dd957f5b43a1a
-my_uart_rx.vhd
-89c384c011c27efb80b6867c765dc852
-speed_select.vhd
-32cea0dcbe17b23598de6b917515baca
-lcm_ascii_converter.vhd
-63c8e910c875414dd51c162ae78e
+fsm_io.vhd
+f1f613539c45cc5e13bfd2d3191f3e60
+bcdtoascii.vhd
+3c553c188b83469d60a28cbf72e67492
 gcd.vhd
 033dea37773dc3785c3b6c32025dc
+lcm_ascii_converter.vhd
+63c8e910c875414dd51c162ae78e
+bcdfrom8bit.vhd
+9b9ded44591ac2c80dd957f5b43a1a
+gcdfsm.vhd
+621d474cbb8fd33c98ef932fd22d84c
+lcm.vhd
+99f53a815dea31569eb55d94afe8f3
+my_uart_tx.vhd
+74c3a6ffee47037a7a0c1108b8383
+fsm_controller.vhd
+a586fa4b8e7fca39c5d33c65df273518
+gcdlcm.vhd
+d7fe7732f288adf1ca68f6790ce749
+kalkulatorgcdnlcm.vhd
+7aee8cb871a73b56c0245ac6997a70
+speed_select.vhd
+32cea0dcbe17b23598de6b917515baca
+sender.vhd
+b8185628694d8f9b69f7fd2acacffff6
+io.vhd
+735e68b3f33fceeafe0df701926bbc
+my_uart_rx.vhd
+89c384c011c27efb80b6867c765dc852
+receiver.vhd
+1fa7a5982a9b4914860717a4250a737
 bcdfrom32bit.vhd
 5748e13293cdb9656de9d2b198a4da
 converter32.vhd
 d4e1e5e2aed859a2be82fe493bff53b
-my_uart_tx.vhd
-74c3a6ffee47037a7a0c1108b8383
-receiver.vhd
-1fa7a5982a9b4914860717a4250a737
 }
 # hierarchies {
 gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD

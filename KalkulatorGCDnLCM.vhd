@@ -13,6 +13,7 @@ entity KalkulatorGCDnLCM is
         PROCESSING      : out std_logic;
         DONEPROCESS     : out std_logic;
         CONVERTING      : out std_logic;
+        DEBUGGING       : out std_logic;
         
         -- serial part
 		rs232_rx 		: in std_logic;
@@ -133,6 +134,15 @@ Architecture GCDnLCM of KalkulatorGCDnLCM is
         );
 
     DONEPROCESS <= NOT DONE_PROCESS;
+
+    process(RESULT_LCM)
+    begin
+        IF RESULT_LCM = "00000110" then
+            DEBUGGING <= '0';
+        else
+            DEBUGGING <= '1';
+        END IF;
+    END PROCESS;
 
 
 end architecture;
