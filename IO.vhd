@@ -1,0 +1,389 @@
+-- library
+library ieee;
+use ieee.std_logic_1164.all;
+use IEEE.NUMERIC_STD.ALL;
+
+-- entity
+entity IO is
+	port(
+		clk 				: in std_logic;
+		rst_n 			: in std_logic;
+		BILANGAN1			: OUT unsigned (7 downto 0);
+		BILANGAN2			: OUT unsigned (7 downto 0);
+		BILANGAN3			: OUT unsigned (7 downto 0);
+		BILANGAN4			: OUT unsigned (7 downto 0);
+		MODE				: OUT std_logic_vector(1 downto 0);
+		START_PROCESS	    : OUT std_logic; 
+		DONE_PROCESS	    : IN std_logic; 
+		RESULT_GCD 			: IN unsigned(7 downto 0);
+ 		RESULT_LCM 			: IN unsigned(31 downto 0);
+		JUMLAH				: OUT std_logic_vector(1 downto 0);
+
+	-- RECEIVER CONNECTION DEBUGGING PORT
+		READY	    		: OUT std_logic; 
+		PROCESSING	    	: OUT std_logic;
+		CONVERTING	    	: OUT std_logic;
+
+		-- SENDDEBUG			: IN std_logic;
+
+		-- DEBUGNILAI			: OUT unsigned (7 downto 0);
+
+
+		COUNTERP : out INTEGER;
+		WAITINGP : out INTEGER;
+		RECEIVE_DEBUG		: OUT std_logic;
+		RECEIVE_ERROR		: OUT std_logic;
+		HASIL_BACAAN 		: OUT std_logic_vector (7 downto 0);
+		RECEIVE_FEEDBACK	: OUT std_logic;
+
+		
+-- paralel part
+		-- button 			: in std_logic;
+		-- Seven_Segment	: out std_logic_vector(7 downto 0) ;		
+		-- LED 				: out std_logic;
+		-- Digit_SS			: out std_logic_vector(3 downto 0) ;
+		
+-- serial part
+		rs232_rx 		: in std_logic;
+		rs232_tx 		: out std_logic
+	
+	);
+End entity;
+
+
+Architecture RTL of IO is
+
+	Component my_uart_top is
+	port(
+			clk 			: in std_logic;
+			rst_n 		: in std_logic;
+			send 			: in std_logic;
+			send_data	: in std_logic_vector(7 downto 0) ;
+			receive 		: out std_logic;
+			sending 		: out std_logic;
+			receive_data: out std_logic_vector(7 downto 0) ;
+			rs232_rx 	: in std_logic;
+			rs232_tx 	: out std_logic
+	);
+	end Component;
+
+	component receiver is
+		Port (
+			RST     : in  STD_LOGIC;
+			RECEIVE   : in  STD_LOGIC;
+			RECEIVE_DATA : in  STD_LOGIC_VECTOR (7 downto 0);
+			CLK     : in  STD_LOGIC;
+			DONE    : out STD_LOGIC;
+			ERROR    : out STD_LOGIC;
+			BILANGAN1  : out UNSIGNED (7 downto 0);
+			BILANGAN2  : out UNSIGNED (7 downto 0);
+			BILANGAN3  : out UNSIGNED (7 downto 0);
+			BILANGAN4  : out UNSIGNED (7 downto 0);
+			RECEIVE_FEEDBACK   : OUT  STD_LOGIC;
+			
+			
+			
+			-- DEBUGGING PORT
+			COUNTERP : out INTEGER;
+			WAITINGP : out INTEGER;
+			
+			BILANGAN1internalAP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN1internalBP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN1internalCP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			
+			BILANGAN2internalAP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN2internalBP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN2internalCP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			
+			BILANGAN3internalAP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN3internalBP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN3internalCP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			
+			BILANGAN4internalAP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN4internalBP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			BILANGAN4internalCP  : OUT STD_LOGIC_VECTOR (7 downto 0);
+			
+			
+			MODE  : out STD_LOGIC_VECTOR (1 downto 0);
+			JUMLAH  : out STD_LOGIC_VECTOR (1 downto 0)
+			
+		);
+	end component;
+
+	component sender is
+		port(
+		-- input
+		GCD_1 : in std_logic_vector(7 downto 0);
+		GCD_2 : in std_logic_vector(7 downto 0);
+		GCD_3 : in std_logic_vector(7 downto 0);
+		LCM_1 : in std_logic_vector(7 downto 0);
+		LCM_2 : in std_logic_vector(7 downto 0);
+		LCM_3 : in std_logic_vector(7 downto 0);
+		LCM_4 : in std_logic_vector(7 downto 0);
+		LCM_5 : in std_logic_vector(7 downto 0);
+		LCM_6 : in std_logic_vector(7 downto 0);
+		LCM_7 : in std_logic_vector(7 downto 0);
+		LCM_8 : in std_logic_vector(7 downto 0);
+		LCM_9 : in std_logic_vector(7 downto 0);
+		LCM_10 : in std_logic_vector(7 downto 0);
+		start_send : in std_logic;
+		clk : in std_logic;
+		tx_en : in std_logic;
+		   -- output
+		s_out: out std_logic_vector(3 downto 0);
+		send : out std_logic;
+		data_send : out std_logic_vector(7 downto 0)
+		);
+	End component;
+
+	component LCM_ASCII_CONVERTER is
+		Port (
+			RST     : in  STD_LOGIC;
+			START   : in  STD_LOGIC;
+			INPUT32 : in  UNSIGNED (31 downto 0);
+			CLK     : in  STD_LOGIC;
+			DONE    : out STD_LOGIC;
+
+			-- PIN DEBUGGER
+			DEBUG : OUT unsigned (7 downto 0);
+
+			OUTPUT1LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT2LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT3LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT4LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT5LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT6LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT7LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT8LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT9LCM  : out UNSIGNED (7 downto 0);
+			OUTPUT10LCM : out UNSIGNED (7 downto 0)
+		);
+	end component;
+
+	component GCD_ASCII_CONVERTER is
+		Port (
+			RST     : in  STD_LOGIC;
+			START   : in  STD_LOGIC;
+			INPUT8 : in  UNSIGNED (7 downto 0);
+			CLK     : in  STD_LOGIC;
+			DONE    : out STD_LOGIC;
+			OUTPUT1GCD  : out UNSIGNED (7 downto 0);
+			OUTPUT2GCD  : out UNSIGNED (7 downto 0);
+			OUTPUT3GCD  : out UNSIGNED (7 downto 0)
+			
+		);
+	end component;
+
+	component fsm_io is
+		port (
+		  Clk : in std_logic;
+		  Rst : in std_logic;
+		  Done_Receiver : in std_logic;
+		  Receive_Error : in std_logic;
+		  Done_ConverttoASCII : in std_logic;
+		  Done_Process : in std_logic;
+		  Start_Process : out std_logic;
+		  Start_Convert : out std_logic;
+		  READY : out std_logic;
+		  PROCESSING : out std_logic;
+		  Start_Send : out std_logic
+		);
+	end component;
+	
+	-- SIGNAL PENGOLAHAN INPUT
+	signal data_send : std_logic_vector(7 downto 0);
+	signal receive_data : std_logic_vector(7 downto 0);
+	signal temp_data	: std_logic_vector(7 downto 0) := "00000000";
+	signal receive_c	: std_logic;
+	SIGNAL SEND_SIGNAL	: std_logic;
+	
+	-- SIGNAL DEBUG
+	signal RECEIVE_SIGNAL		: std_logic;
+	signal DONE_RECEIVER : std_logic; -- TO FSM
+	signal ERROR_RECEIVER : std_logic; -- TO FSM
+	--SIGNAL DEBUGBCD : UNSIGNED (7 downto 0);
+
+
+	-- SIGNAL BAGAN CONVERTER
+	signal START_CONVERTtoASCII : std_logic; -- TO FSM
+	signal DONE_CONVERTtoASCII_LCM : std_logic;
+	SIGNAL LCM1 : UNSIGNED (7 downto 0);
+	SIGNAL LCM2 : UNSIGNED (7 downto 0);
+	SIGNAL LCM3 : UNSIGNED (7 downto 0);
+	SIGNAL LCM4 : UNSIGNED (7 downto 0);
+	SIGNAL LCM5 : UNSIGNED (7 downto 0);
+	SIGNAL LCM6 : UNSIGNED (7 downto 0);
+	SIGNAL LCM7 : UNSIGNED (7 downto 0);
+	SIGNAL LCM8 : UNSIGNED (7 downto 0);
+	SIGNAL LCM9 : UNSIGNED (7 downto 0);
+	SIGNAL LCM10 : UNSIGNED (7 downto 0);
+
+	signal DONE_CONVERTtoASCII_GCD : std_logic;
+	SIGNAL GCD1 : UNSIGNED (7 downto 0);
+	SIGNAL GCD2 : UNSIGNED (7 downto 0);
+	SIGNAL GCD3 : UNSIGNED (7 downto 0);
+
+	signal DONE_CONVERTtoASCII : std_logic; -- TO FSM
+
+	signal convert_done_delay : integer := 0; -- add delay to done converter function
+
+	-- SIGNAL BAGAN SENDER
+	signal START_SEND : std_logic; -- TO FSM
+	signal TX_EN : std_logic;
+
+	-- IO SIGNAL
+	SIGNAL START_PROCESS_SIGNAL : std_logic;
+	SIGNAL DONE_PROCESS_SIGNAL : std_logic;
+	
+begin
+
+	UART: my_uart_top 
+	port map (
+			clk 			=> clk,
+			rst_n 			=> rst_n,
+			send 			=> SEND_SIGNAL,
+			sending			=> TX_EN,
+			send_data		=> data_send,
+			receive 		=> RECEIVE_SIGNAL,
+			receive_data	=> receive_data,
+			rs232_rx 		=> rs232_rx,
+			rs232_tx 		=> rs232_tx
+	);
+
+	RECEIVER_COMPONENT : receiver 
+	port map (
+			RST     		=> rst_n,
+			RECEIVE   		=> RECEIVE_SIGNAL,
+			RECEIVE_DATA 	=> temp_data,
+			CLK     		=> clk,
+			DONE    		=> DONE_RECEIVER,
+			ERROR    		=> ERROR_RECEIVER,
+			BILANGAN1       => BILANGAN1,
+			BILANGAN2  		=> BILANGAN2,
+			BILANGAN3  		=> BILANGAN3,
+			BILANGAN4  		=> BILANGAN4,
+			MODE  			=> MODE,
+			JUMLAH  		=> JUMLAH,
+
+			-- DEBUGGING PORT
+			RECEIVE_FEEDBACK => RECEIVE_FEEDBACK,
+			COUNTERP 		=> COUNTERP,
+			WAITINGP 		=> WAITINGP
+	);
+
+	SenderComponent : sender
+	port map(
+		-- input
+		GCD_1 			=> STD_LOGIC_VECTOR(GCD1),
+		GCD_2 			=> STD_LOGIC_VECTOR(GCD2),
+		GCD_3 			=> STD_LOGIC_VECTOR(GCD3),
+		LCM_1 			=> STD_LOGIC_VECTOR(LCM1),
+		LCM_2 			=> STD_LOGIC_VECTOR(LCM2),
+		LCM_3 			=> STD_LOGIC_VECTOR(LCM3),
+		LCM_4 			=> STD_LOGIC_VECTOR(LCM4),
+		LCM_5 			=> STD_LOGIC_VECTOR(LCM5),
+		LCM_6 			=> STD_LOGIC_VECTOR(LCM6),
+		LCM_7 			=> STD_LOGIC_VECTOR(LCM7),
+		LCM_8 			=> STD_LOGIC_VECTOR(LCM8),
+		LCM_9 			=> STD_LOGIC_VECTOR(LCM9),
+		LCM_10 			=> STD_LOGIC_VECTOR(LCM10),
+		start_send 		=> START_SEND,
+		clk 			=> clk,
+		tx_en 			=> TX_EN,
+		--tx_en 			=> TX_EN	
+		-- output
+		send 			=> SEND_SIGNAL,
+		data_send 		=> data_send
+		);
+
+	LCMtoASCII : LCM_ASCII_CONVERTER 
+	Port map (
+			RST     		=> NOT rst_n,
+			START   		=> START_CONVERTtoASCII,
+			INPUT32 		=> RESULT_LCM,
+			CLK     		=> clk,
+			DONE    		=> DONE_CONVERTtoASCII_LCM,
+
+			-- DEBUG PORT
+			--DEBUG 			=> DEBUGBCD,
+
+			OUTPUT1LCM  	=> LCM1,
+			OUTPUT2LCM  	=> LCM2,
+			OUTPUT3LCM  	=> LCM3,
+			OUTPUT4LCM  	=> LCM4,
+			OUTPUT5LCM  	=> LCM5,
+			OUTPUT6LCM  	=> LCM6,
+			OUTPUT7LCM  	=> LCM7,
+			OUTPUT8LCM  	=> LCM8,
+			OUTPUT9LCM  	=> LCM9,
+			OUTPUT10LCM 	=> LCM10
+		);
+	
+
+	GCDtoASCII : GCD_ASCII_CONVERTER 
+	Port map (
+			RST     		=> NOT rst_n,
+			START   		=> START_CONVERTtoASCII,
+			INPUT8 			=> RESULT_GCD,
+			CLK     		=> clk,
+			DONE    		=> DONE_CONVERTtoASCII_GCD,
+			OUTPUT1GCD  	=> GCD1,
+			OUTPUT2GCD  	=> GCD2,
+			OUTPUT3GCD  	=> GCD3
+			
+		);	
+
+	fsm_io_COMP : fsm_io
+		port map (
+		  Clk 					=> clk,
+		  Rst 					=> rst_n,
+		  Done_Receiver 		=> DONE_RECEIVER,
+		  Receive_Error 		=> ERROR_RECEIVER,
+		  Done_ConverttoASCII 	=> DONE_CONVERTtoASCII,
+		  Done_Process 			=> DONE_PROCESS_SIGNAL,
+		  Start_Process 		=> START_PROCESS_SIGNAL,
+		  Start_Convert 		=> START_CONVERTtoASCII,
+		  READY 				=> READY,
+		  PROCESSING			=> PROCESSING,
+		  Start_Send 			=> START_SEND
+		);
+	
+	Process(clk)
+	begin
+		if ((clk = '1') and clk'event) then
+			receive_c <= RECEIVE_SIGNAL;
+			if ((RECEIVE_SIGNAL = '1') and (receive_c = '1'))then
+				temp_data <= receive_data;
+			end if;
+
+			if ((DONE_CONVERTtoASCII_LCM = '1') AND (DONE_CONVERTtoASCII_GCD = '1')) then
+				if convert_done_delay = 5 then
+					DONE_CONVERTtoASCII <= '1';
+				else
+					convert_done_delay <= convert_done_delay + 1;
+				end if;
+			else
+				DONE_CONVERTtoASCII <= '0';
+			end if;
+			
+		end if;
+	end process;
+	
+	--Digit_SS <= "0000";
+	
+	--Seven_Segment <= temp_data;
+	--LED <= RECEIVE_SIGNAL;
+	START_PROCESS <= START_PROCESS_SIGNAL;
+	DONE_PROCESS_SIGNAL <= DONE_PROCESS;
+
+	RECEIVE_DEBUG <= RECEIVE_SIGNAL;
+	RECEIVE_ERROR <= ERROR_RECEIVER;
+	HASIL_BACAAN <= receive_data;
+	CONVERTING <= DONE_CONVERTtoASCII;
+
+	-- DEBUGNILAI <= LCM10;
+	-- data_send <= STD_LOGIC_VECTOR(DEBUGBCD);
+
+end architecture;
+
+
