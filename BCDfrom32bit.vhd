@@ -61,6 +61,16 @@ begin
 						COUNTER <= COUNTER + 1;
 						INITIAL <= INPUT32;
 						InternalDone <= '0';
+						TEMP1 <= (others => '0');
+						TEMP2 <= (others => '0');
+						TEMP3 <= (others => '0');
+						TEMP4 <= (others => '0');
+						TEMP5 <= (others => '0');
+						TEMP6 <= (others => '0');
+						TEMP7 <= (others => '0');
+						TEMP8 <= (others => '0');
+						TEMP9 <= (others => '0');
+						TEMP10 <= (others => '0');
 					end if;
                 elsif ((COUNTER >= 1) and (COUNTER <= 32)) then
                         if EVALUATE = 1 then

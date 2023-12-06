@@ -19,15 +19,16 @@ end entity fsm_io;
 
 architecture behav of fsm_io is
   -- deklarasikan tipe data untuk state
-  type t_state is (S0, S1, S2, S3, S3b, S4, S5); -- contoh enumerasi
+  type t_state is (S0, S1, S2, S3, S3b, S4, S5, S6); -- contoh enumerasi
   -- deklarasikan sinyal untuk menyimpan state saat ini
   signal state : t_state;
   -- deklarasikan konstanta untuk durasi Start_Send
-  constant send_duration : natural := 10; -- contoh 10 clock cycle
+  constant send_duration : natural := 1; -- contoh 10 clock cycle
   -- deklarasikan sinyal untuk menghitung durasi Start_Send
   signal send_counter : natural range 0 to send_duration;
   -- signal start process counter
   signal start_process_count : integer;
+  signal sender_delay_count : integer := 0;
 
   SIGNAL READYINT : STD_LOGIC := '0';
   SIGNAL PROCESSINGINT : STD_LOGIC := '1';
@@ -119,10 +120,20 @@ begin
             Start_Send <= '0';
             send_counter <= 0;
             if Done_ConverttoASCII = '1' then -- kondisi untuk berpindah state
-              state <= S0; -- state berikutnya
-              Start_Send <= '1'; -- menyalakan Start_Send
-              send_counter <= send_duration; -- mengatur durasi Start_Send
+              state <= S6; -- state berikutnya
+              -- Start_Send <= '1'; -- menyalakan Start_Send
+              -- send_counter <= send_duration; -- mengatur durasi Start_Send
             end if;
+          
+            when S6 =>
+                if sender_delay_count >= 0 then
+                  state <= S0; -- state berikutnya
+                  Start_Send <= '1'; -- menyalakan Start_Send
+                  send_counter <= send_duration; -- mengatur durasi Start_Send
+                else
+                  sender_delay_count <= sender_delay_count + 1;
+                  end if;
+
         end case;
         -- buat proses untuk mengatur durasi Start_Send
         if send_counter > 0 then

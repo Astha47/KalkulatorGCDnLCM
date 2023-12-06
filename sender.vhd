@@ -20,22 +20,29 @@ entity sender is
     LCM_9 : in std_logic_vector(7 downto 0);
     LCM_10 : in std_logic_vector(7 downto 0);
 
+
+
     -- DEBUGGING
-    STATEDB : OUT std_logic_vector(31 DOWNTO 0);
+    --STATEDB : OUT std_logic_vector(31 DOWNTO 0);
+    DEBUG : out std_logic;
 
     rst : in std_logic;
     start_send : in std_logic;
     clk : in std_logic;
     tx_en : in std_logic;
     send : out std_logic;
+    MODE : in std_logic_vector (1 downto 0);
     data_send : out std_logic_vector(7 downto 0)
   );
 End entity;
 
 architecture sender_arc of sender is
   signal state : INTEGER := 0;
+  signal FIRSTDELAY : INTEGER := 0;
   signal SEND_SIGNAL : std_logic := 'Z';
   signal SEND_DATA : std_logic_vector(7 downto 0);
+
+  signal testData : std_logic_vector(7 downto 0) := "00110011";
 begin
 
  
@@ -46,18 +53,46 @@ begin
     if rising_edge (clk) then
       if rst = '0' then
         state <= 0;
-        SEND_SIGNAL <= 'Z';
+        SEND_SIGNAL <= '0';
+        FIRSTDELAY <= 0;
       else
         case state is
           when 0 =>
             if start_send = '1' then
-              state <= state + 1;
+              if MODE = "01" OR MODE = "11" then
+                -- state <= state + 1;
+                state <= -4;
+              else
+                state <= 17;
+              end if;
             else
               STATE <= 0;
             end if;
+            SEND_SIGNAL <= '0';
+
+          -- starting
+          when -4 =>
+              SEND_DATA <= "00111101";
+              SEND_SIGNAL <= '1';
+              state <= state + 1;
+          when -3 =>
+              SEND_SIGNAL <= '1';
+              state <= state + 1;
+          when -2 =>
+              if tx_en = '1' then
+                SEND_SIGNAL <= '0';
+                state <= state + 1;
+              end if;
+          when -1 =>
+            if tx_en = '0' then
+              -- state <= state + 1;
+              state <= 1;
+            end if;
+
           -- GCD1
           when 1 =>
               SEND_DATA <= GCD_1;
+              SEND_SIGNAL <= '1';
               state <= state + 1;
           when 2 =>
               SEND_SIGNAL <= '1';
@@ -101,7 +136,11 @@ begin
               end if;
           when 12 =>
             if tx_en = '0' then
-              state <= state + 1;
+              if MODE = "10" OR MODE = "11" then
+                state <= state + 1;
+              else
+                state <= 57;
+              end if;
             end if;
           --SPACE
           when 13 =>
@@ -276,7 +315,6 @@ begin
                 state <= state + 1;
               end if;
           WHEN 57 =>
-            SEND_SIGNAL <= '0';
             state <= 0;
             
           when others =>
@@ -286,9 +324,18 @@ begin
     end if;
   end process;
 
+  process(GCD_1)
+  begin
+    if GCD_1 = "00110001" then
+      DEBUG <= '0';
+    else
+      DEBUG <= '1';
+    end if;
+  end process;
+
   send <= NOT SEND_SIGNAL;
   data_send <= SEND_DATA;
-  STATEDB <= std_logic_vector(to_unsigned(state, STATEDB'length));
+  -- STATEDB <= std_logic_vector(to_unsigned(state, STATEDB'length));
 
 
 end sender_arc;

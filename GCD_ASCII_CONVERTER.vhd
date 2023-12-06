@@ -9,6 +9,7 @@ entity GCD_ASCII_CONVERTER is
         INPUT8 : in  UNSIGNED (7 downto 0);
         CLK     : in  STD_LOGIC;
         DONE    : out STD_LOGIC;
+        DEBUG    : out STD_LOGIC;
         OUTPUT1GCD  : out UNSIGNED (7 downto 0);
         OUTPUT2GCD  : out UNSIGNED (7 downto 0);
         OUTPUT3GCD  : out UNSIGNED (7 downto 0)
@@ -25,6 +26,7 @@ architecture ArsitekturGCDtoASCII of GCD_ASCII_CONVERTER is
             INPUT8 : in  UNSIGNED (7 downto 0);
             CLK     : in  STD_LOGIC;
             DONE    : out STD_LOGIC;
+            DEBUG    : out STD_LOGIC;
             OUPUT1  : out UNSIGNED (3 downto 0);
             OUPUT2  : out UNSIGNED (3 downto 0);
             OUPUT3  : out UNSIGNED (3 downto 0)
@@ -51,6 +53,7 @@ begin
             INPUT8 => INPUT8,
             CLK     => CLK,
             DONE    => DONE,
+            DEBUG   => DEBUG,
             OUPUT1  => BCD1,
             OUPUT2  => BCD2,
             OUPUT3  => BCD3

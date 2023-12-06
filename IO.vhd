@@ -23,6 +23,7 @@ entity IO is
 		READY	    		: OUT std_logic; 
 		PROCESSING	    	: OUT std_logic;
 		CONVERTING	    	: OUT std_logic;
+		DEBUG	  			: OUT std_logic; 
 
 		-- SENDDEBUG			: IN std_logic;
 
@@ -129,9 +130,12 @@ Architecture RTL of IO is
 		start_send : in std_logic;
 		clk : in std_logic;
 		tx_en : in std_logic;
+		rst : in std_logic;
+		MODE : in std_logic_vector (1 downto 0);
 		   -- output
-		s_out: out std_logic_vector(3 downto 0);
+		--s_out: out std_logic_vector(3 downto 0);
 		send : out std_logic;
+		DEBUG : out std_logic;
 		data_send : out std_logic_vector(7 downto 0)
 		);
 	End component;
@@ -167,6 +171,7 @@ Architecture RTL of IO is
 			INPUT8 : in  UNSIGNED (7 downto 0);
 			CLK     : in  STD_LOGIC;
 			DONE    : out STD_LOGIC;
+			DEBUG    : out STD_LOGIC;
 			OUTPUT1GCD  : out UNSIGNED (7 downto 0);
 			OUTPUT2GCD  : out UNSIGNED (7 downto 0);
 			OUTPUT3GCD  : out UNSIGNED (7 downto 0)
@@ -196,11 +201,13 @@ Architecture RTL of IO is
 	signal temp_data	: std_logic_vector(7 downto 0) := "00000000";
 	signal receive_c	: std_logic;
 	SIGNAL SEND_SIGNAL	: std_logic;
+	signal ModeSignal  	: std_logic_vector (1 downto 0);
 	
 	-- SIGNAL DEBUG
 	signal RECEIVE_SIGNAL		: std_logic;
 	signal DONE_RECEIVER : std_logic; -- TO FSM
 	signal ERROR_RECEIVER : std_logic; -- TO FSM
+	--signal debugGCD	: UNSIGNED (7 downto 0) := "01111011";
 	--SIGNAL DEBUGBCD : UNSIGNED (7 downto 0);
 
 
@@ -262,7 +269,7 @@ begin
 			BILANGAN2  		=> BILANGAN2,
 			BILANGAN3  		=> BILANGAN3,
 			BILANGAN4  		=> BILANGAN4,
-			MODE  			=> MODE,
+			MODE  			=> ModeSignal,
 			JUMLAH  		=> JUMLAH,
 
 			-- DEBUGGING PORT
@@ -290,9 +297,11 @@ begin
 		start_send 		=> START_SEND,
 		clk 			=> clk,
 		tx_en 			=> TX_EN,
-		--tx_en 			=> TX_EN	
+		rst				=> rst_n,
+		MODE			=> ModeSignal,
 		-- output
 		send 			=> SEND_SIGNAL,
+		DEBUG			=> DEBUG,
 		data_send 		=> data_send
 		);
 
@@ -327,6 +336,7 @@ begin
 			INPUT8 			=> RESULT_GCD,
 			CLK     		=> clk,
 			DONE    		=> DONE_CONVERTtoASCII_GCD,
+			--DEBUG			=> DEBUG,
 			OUTPUT1GCD  	=> GCD1,
 			OUTPUT2GCD  	=> GCD2,
 			OUTPUT3GCD  	=> GCD3
@@ -380,6 +390,16 @@ begin
 	RECEIVE_ERROR <= ERROR_RECEIVER;
 	HASIL_BACAAN <= receive_data;
 	CONVERTING <= DONE_CONVERTtoASCII;
+	MODE <= ModeSignal;
+
+	-- process(GCD1)
+	-- begin
+	-- 	if GCD1 = "00110001" then
+	-- 		DEBUG <= '0';
+	-- 	else 
+	-- 		DEBUG <= '1';
+	-- 	end if;
+	-- end process;
 
 	-- DEBUGNILAI <= LCM10;
 	-- data_send <= STD_LOGIC_VECTOR(DEBUGBCD);

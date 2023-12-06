@@ -13,6 +13,7 @@ entity KalkulatorGCDnLCM is
         PROCESSING      : out std_logic;
         DONEPROCESS     : out std_logic;
         CONVERTING      : out std_logic;
+        DEBUG_PIN       : out std_logic;
         
         -- serial part
 		rs232_rx 		: in std_logic;
@@ -42,6 +43,7 @@ Architecture GCDnLCM of KalkulatorGCDnLCM is
             READY	    		: OUT std_logic; 
 		    PROCESSING	    	: OUT std_logic;
             CONVERTING	    	: OUT std_logic;
+            DEBUG               : OUT std_logic;
 
             COUNTERP            : out INTEGER;
             WAITINGP            : out INTEGER;
@@ -87,6 +89,8 @@ Architecture GCDnLCM of KalkulatorGCDnLCM is
     SIGNAL RESULT_LCM : unsigned (31 downto 0);
     SIGNAL JUMLAH : std_logic_vector(1 downto 0);
 
+    SIGNAL DEBUGsignal : std_logic;
+
     begin
 
         IO_COMPONENT: IO 
@@ -107,6 +111,7 @@ Architecture GCDnLCM of KalkulatorGCDnLCM is
             READY	    		=> READY,
 		    PROCESSING	    	=> PROCESSING,
             CONVERTING          => CONVERTING,
+            DEBUG               => DEBUGsignal,
             
             -- serial part
             rs232_rx 		    => rs232_rx,
@@ -133,6 +138,16 @@ Architecture GCDnLCM of KalkulatorGCDnLCM is
         );
 
     DONEPROCESS <= NOT DONE_PROCESS;
+    DEBUG_PIN <= DEBUGsignal;
+
+    -- process(RESULT_GCD)
+    -- begin
+    --     if (RESULT_GCD = "01111010") then
+    --         DEBUG_PIN <= '0';
+    --     else
+    --         DEBUG_PIN <= '1';
+    --     end if;
+    -- end process;
 
 
 end architecture;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for KalkulatorGCDnLCM
-Tue Nov 28 18:11:38 2023
+Wed Dec 06 09:19:24 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -16,25 +16,23 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   8. State Machine - |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|fsm_controller:FSM|cState
   9. State Machine - |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|fsm_controller:FSM|cState
  10. State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state
- 11. State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|nextstate
- 12. State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|currentstate
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult1
- 19. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult0
- 20. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult2
- 21. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult3
- 22. lpm_mult Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|fsm_controller:FSM"
- 24. Port Connectivity Checks: "gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|fsm_controller:FSM"
- 25. Port Connectivity Checks: "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII"
- 26. Port Connectivity Checks: "IO:IO_COMPONENT|sender:SenderComponent"
- 27. Port Connectivity Checks: "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT"
- 28. Port Connectivity Checks: "IO:IO_COMPONENT"
- 29. Analysis & Synthesis Messages
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult1
+ 17. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult0
+ 18. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult2
+ 19. Parameter Settings for Inferred Entity Instance: IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult3
+ 20. lpm_mult Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|fsm_controller:FSM"
+ 22. Port Connectivity Checks: "gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|fsm_controller:FSM"
+ 23. Port Connectivity Checks: "IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII"
+ 24. Port Connectivity Checks: "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII"
+ 25. Port Connectivity Checks: "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT"
+ 26. Port Connectivity Checks: "IO:IO_COMPONENT"
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -60,16 +58,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 28 18:11:38 2023        ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 06 09:19:24 2023        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; KalkulatorGCDnLCM                            ;
 ; Top-level Entity Name              ; KalkulatorGCDnLCM                            ;
 ; Family                             ; Cyclone IV E                                 ;
-; Total logic elements               ; 1,837                                        ;
-;     Total combinational functions  ; 1,615                                        ;
-;     Dedicated logic registers      ; 937                                          ;
-; Total registers                    ; 937                                          ;
-; Total pins                         ; 8                                            ;
+; Total logic elements               ; 1,854                                        ;
+;     Total combinational functions  ; 1,667                                        ;
+;     Dedicated logic registers      ; 915                                          ;
+; Total registers                    ; 915                                          ;
+; Total pins                         ; 9                                            ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -207,27 +205,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,837     ;
+; Estimated Total logic elements              ; 1,854     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1615      ;
+; Total combinational functions               ; 1667      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 538       ;
-;     -- 3 input functions                    ; 673       ;
-;     -- <=2 input functions                  ; 404       ;
+;     -- 4 input functions                    ; 599       ;
+;     -- 3 input functions                    ; 630       ;
+;     -- <=2 input functions                  ; 438       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 937       ;
-;     -- arithmetic mode                      ; 678       ;
+;     -- normal mode                          ; 959       ;
+;     -- arithmetic mode                      ; 708       ;
 ;                                             ;           ;
-; Total registers                             ; 937       ;
-;     -- Dedicated logic registers            ; 937       ;
+; Total registers                             ; 915       ;
+;     -- Dedicated logic registers            ; 915       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 8         ;
+; I/O pins                                    ; 9         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 937       ;
-; Total fan-out                               ; 8385      ;
-; Average fan-out                             ; 3.27      ;
+; Maximum fan-out                             ; 915       ;
+; Total fan-out                               ; 8547      ;
+; Average fan-out                             ; 3.29      ;
 +---------------------------------------------+-----------+
 
 
@@ -236,32 +234,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Library Name ;
 +----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
-; |KalkulatorGCDnLCM                     ; 1615 (1)          ; 937 (0)      ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |KalkulatorGCDnLCM                                                                               ; work         ;
-;    |IO:IO_COMPONENT|                   ; 1032 (46)         ; 508 (42)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT                                                               ;              ;
-;       |GCD_ASCII_CONVERTER:GCDtoASCII| ; 98 (0)            ; 54 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII                                ; work         ;
-;          |BCDfrom8bit:DoubleDabble|    ; 91 (91)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble       ; work         ;
-;          |BCDtoASCII:GCD1|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDtoASCII:GCD1                ; work         ;
-;          |BCDtoASCII:GCD2|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDtoASCII:GCD2                ; work         ;
+; |KalkulatorGCDnLCM                     ; 1667 (1)          ; 915 (0)      ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |KalkulatorGCDnLCM                                                                               ; work         ;
+;    |IO:IO_COMPONENT|                   ; 1084 (46)         ; 486 (42)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT                                                               ;              ;
+;       |GCD_ASCII_CONVERTER:GCDtoASCII| ; 92 (0)            ; 54 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII                                ; work         ;
+;          |BCDfrom8bit:DoubleDabble|    ; 88 (88)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble       ; work         ;
+;          |BCDtoASCII:GCD1|             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDtoASCII:GCD1                ; work         ;
+;          |BCDtoASCII:GCD2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDtoASCII:GCD2                ; work         ;
 ;          |BCDtoASCII:GCD3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDtoASCII:GCD3                ; work         ;
-;       |LCM_ASCII_CONVERTER:LCMtoASCII| ; 212 (0)           ; 106 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII                                ;              ;
-;          |BCDfrom32bit:DoubleDabble|   ; 186 (186)         ; 106 (106)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble      ;              ;
+;       |LCM_ASCII_CONVERTER:LCMtoASCII| ; 193 (0)           ; 106 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII                                ;              ;
+;          |BCDfrom32bit:DoubleDabble|   ; 183 (183)         ; 106 (106)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble      ; work         ;
 ;          |BCDtoASCII:LCM10|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM10               ; work         ;
-;          |BCDtoASCII:LCM1|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM1                ; work         ;
-;          |BCDtoASCII:LCM2|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM2                ; work         ;
+;          |BCDtoASCII:LCM1|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM1                ; work         ;
+;          |BCDtoASCII:LCM2|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM2                ; work         ;
 ;          |BCDtoASCII:LCM3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM3                ; work         ;
-;          |BCDtoASCII:LCM4|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM4                ; work         ;
-;          |BCDtoASCII:LCM5|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM5                ; work         ;
-;          |BCDtoASCII:LCM6|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM6                ; work         ;
-;          |BCDtoASCII:LCM7|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM7                ; work         ;
-;          |BCDtoASCII:LCM8|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM8                ; work         ;
-;          |BCDtoASCII:LCM9|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM9                ; work         ;
-;       |fsm_io:fsm_io_COMP|             ; 99 (99)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP                                            ; work         ;
-;       |my_uart_top:UART|               ; 91 (0)            ; 70 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART                                              ;              ;
+;          |BCDtoASCII:LCM4|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM4                ; work         ;
+;          |BCDtoASCII:LCM5|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM5                ; work         ;
+;          |BCDtoASCII:LCM6|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM6                ; work         ;
+;          |BCDtoASCII:LCM7|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM7                ; work         ;
+;          |BCDtoASCII:LCM8|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM8                ; work         ;
+;          |BCDtoASCII:LCM9|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM9                ; work         ;
+;       |fsm_io:fsm_io_COMP|             ; 136 (136)         ; 77 (77)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP                                            ; work         ;
+;       |my_uart_top:UART|               ; 92 (0)            ; 70 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART                                              ;              ;
 ;          |my_uart_rx:receiver|         ; 28 (28)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_rx:receiver                          ;              ;
-;          |my_uart_tx:transmitter|      ; 19 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter                       ;              ;
+;          |my_uart_tx:transmitter|      ; 20 (20)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter                       ;              ;
 ;          |speed_select:speed_rx|       ; 22 (22)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|speed_select:speed_rx                        ;              ;
 ;          |speed_select:speed_tx|       ; 22 (22)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|speed_select:speed_tx                        ;              ;
-;       |receiver:RECEIVER_COMPONENT|    ; 373 (361)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT                                   ;              ;
+;       |receiver:RECEIVER_COMPONENT|    ; 371 (359)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT                                   ;              ;
 ;          |lpm_mult:Mult0|              ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult0                    ;              ;
 ;             |multcore:mult_core|       ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult0|multcore:mult_core ;              ;
 ;          |lpm_mult:Mult1|              ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult1                    ;              ;
@@ -270,7 +268,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |multcore:mult_core|       ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult2|multcore:mult_core ;              ;
 ;          |lpm_mult:Mult3|              ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult3                    ;              ;
 ;             |multcore:mult_core|       ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|lpm_mult:Mult3|multcore:mult_core ;              ;
-;       |sender:SenderComponent|         ; 113 (113)         ; 68 (68)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent                                        ;              ;
+;       |sender:SenderComponent|         ; 154 (154)         ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent                                        ;              ;
 ;    |gcdlcm:PROCESS_COMPONENT|          ; 582 (1)           ; 429 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT                                                      ; work         ;
 ;       |gcdfsm:COUNTGCD|                ; 138 (9)           ; 96 (8)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD                                      ; work         ;
 ;          |fsm_controller:FSM|          ; 15 (15)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|fsm_controller:FSM                   ; work         ;
@@ -325,143 +323,67 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------+
-; State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state             ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+
-; Name      ; state.S5 ; state.S4 ; state.S3b ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+
-; state.S0  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ;
-; state.S1  ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 1        ;
-; state.S2  ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 1        ;
-; state.S3  ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 1        ;
-; state.S3b ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 1        ;
-; state.S4  ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 1        ;
-; state.S5  ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+
++----------------------------------------------------------------------------------------------------+
+; State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state                        ;
++-----------+----------+----------+----------+-----------+----------+----------+----------+----------+
+; Name      ; state.S6 ; state.S5 ; state.S4 ; state.S3b ; state.S3 ; state.S2 ; state.S1 ; state.S0 ;
++-----------+----------+----------+----------+-----------+----------+----------+----------+----------+
+; state.S0  ; 0        ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ;
+; state.S1  ; 0        ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 1        ;
+; state.S2  ; 0        ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 1        ;
+; state.S3  ; 0        ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 1        ;
+; state.S3b ; 0        ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 1        ;
+; state.S4  ; 0        ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 1        ;
+; state.S5  ; 0        ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ;
+; state.S6  ; 1        ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ;
++-----------+----------+----------+----------+-----------+----------+----------+----------+----------+
 
 
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|nextstate                                                                                                                                                                                                                                                                                                                                                                                                 ;
-+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; Name          ; nextstate.s28 ; nextstate.s27 ; nextstate.s26 ; nextstate.s25 ; nextstate.s24 ; nextstate.s23 ; nextstate.s22 ; nextstate.s21 ; nextstate.s20 ; nextstate.s19 ; nextstate.s18 ; nextstate.s17 ; nextstate.s16 ; nextstate.s15 ; nextstate.s14 ; nextstate.s13 ; nextstate.s12 ; nextstate.s11 ; nextstate.s10 ; nextstate.s9 ; nextstate.s8 ; nextstate.s7 ; nextstate.s6 ; nextstate.s5 ; nextstate.s4 ; nextstate.s3 ; nextstate.s2 ; nextstate.s1 ; nextstate.s0 ;
-+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; nextstate.s0  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; nextstate.s1  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
-; nextstate.s2  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
-; nextstate.s3  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
-; nextstate.s4  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s5  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s6  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s7  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s8  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s9  ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s10 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s11 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s12 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s13 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s14 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s15 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s16 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s17 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s18 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s19 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s20 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s21 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s22 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s23 ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s24 ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s25 ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s26 ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s27 ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-; nextstate.s28 ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
-+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|currentstate                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
-+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
-; Name             ; currentstate.s28 ; currentstate.s27 ; currentstate.s26 ; currentstate.s25 ; currentstate.s24 ; currentstate.s23 ; currentstate.s22 ; currentstate.s21 ; currentstate.s20 ; currentstate.s19 ; currentstate.s18 ; currentstate.s17 ; currentstate.s16 ; currentstate.s15 ; currentstate.s14 ; currentstate.s13 ; currentstate.s12 ; currentstate.s11 ; currentstate.s10 ; currentstate.s9 ; currentstate.s8 ; currentstate.s7 ; currentstate.s6 ; currentstate.s5 ; currentstate.s4 ; currentstate.s3 ; currentstate.s2 ; currentstate.s1 ; currentstate.s0 ;
-+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
-; currentstate.s0  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ;
-; currentstate.s1  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1               ;
-; currentstate.s2  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1               ;
-; currentstate.s3  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1               ;
-; currentstate.s4  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s5  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s6  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s7  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s8  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s9  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s10 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s11 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s12 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s13 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s14 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s15 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s16 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s17 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s18 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s19 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s20 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s21 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s22 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s23 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s24 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s25 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s26 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s27 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-; currentstate.s28 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
-+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                          ;
-+------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; Register name                                                                            ; Reason for Removal                                                               ;
-+------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|bps_start_r~en                   ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|my_uart_top:UART|my_uart_rx:receiver|bps_start_r~en                      ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|EVALUATE[1..31]  ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|EVALUATE[1..31] ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[7]                        ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[7]                        ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[7]                        ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[7]                        ; Lost fanout                                                                      ;
-; IO:IO_COMPONENT|sender:SenderComponent|send_data[7]                                      ; Merged with IO:IO_COMPONENT|sender:SenderComponent|send_data[6]                  ;
-; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[6]                     ; Merged with IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[7] ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[4]    ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[4]    ;
-; IO:IO_COMPONENT|sender:SenderComponent|send_data[6]                                      ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|sender:SenderComponent|send_data[5]                                      ; Stuck at VCC due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[4]                        ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[7]                     ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|COUNTER[6..31]                               ; Stuck at GND due to stuck port data_in                                           ;
-; IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[0..3]                                    ; Lost fanout                                                                      ;
-; Total Number of Removed Registers = 147                                                  ;                                                                                  ;
-+------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                       ;
++------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+; Register name                                                                            ; Reason for Removal                                                            ;
++------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|bps_start_r~en                   ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|my_uart_top:UART|my_uart_rx:receiver|bps_start_r~en                      ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|EVALUATE[1..31]  ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|EVALUATE[1..31] ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[7]                        ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[7]                        ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[7]                        ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[7]                        ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[6..7]                                   ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[5]                                      ; Stuck at VCC due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[6..7]                  ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|sender:SenderComponent|state[6..7,9..31]                                 ; Merged with IO:IO_COMPONENT|sender:SenderComponent|state[8]                   ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[5..6]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[4] ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[5..7]                     ; Merged with IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[4] ;
+; IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter                                          ; Lost fanout                                                                   ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalA[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalC[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalC[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalC[4]                        ; Stuck at GND due to stuck port data_in                                        ;
+; IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|COUNTER[6..31]                               ; Stuck at GND due to stuck port data_in                                        ;
+; Total Number of Removed Registers = 169                                                  ;                                                                               ;
++------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -469,9 +391,10 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------------+----------------------------------------------------------------------+
 ; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register                               ;
 +-----------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-; IO:IO_COMPONENT|sender:SenderComponent|send_data[6] ; Stuck at GND              ; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[7] ;
+; IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[7] ; Stuck at GND              ; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[7] ;
 ;                                                     ; due to stuck port data_in ;                                                                      ;
-; IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[0]  ; Lost Fanouts              ; IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[3]                   ;
+; IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[6] ; Stuck at GND              ; IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|tx_data_i[6] ;
+;                                                     ; due to stuck port data_in ;                                                                      ;
 +-----------------------------------------------------+---------------------------+----------------------------------------------------------------------+
 
 
@@ -480,12 +403,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 937   ;
-; Number of registers using Synchronous Clear  ; 145   ;
-; Number of registers using Synchronous Load   ; 284   ;
+; Total registers                              ; 915   ;
+; Number of registers using Synchronous Clear  ; 140   ;
+; Number of registers using Synchronous Load   ; 285   ;
 ; Number of registers using Asynchronous Clear ; 88    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 744   ;
+; Number of registers using Clock Enable       ; 771   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -510,58 +433,55 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 4:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|output[22]                                  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|num[3]                       ;
+; 4:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|output[1]                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|num[0]                       ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|my_uart_top:UART|my_uart_rx:receiver|num[0]                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[3]                                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[2]                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD1|temp_a[3]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD2|temp_a[4]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD3|temp_a[0]                          ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp1[18]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp1[2]                           ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp1[31]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp1[6]                           ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp1[24]                          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp1[7]                           ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD1|temp_b[6]                          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD2|temp_b[0]                          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD3|temp_b[7]                          ;
-; 5:1                ; 24 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp2[23]                          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp2[3]                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp2[7]                           ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp2[21]                          ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|INITIAL[6]   ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|INITIAL[26] ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|send_data[4]                                  ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|send_data[3]                                  ;
-; 5:1                ; 30 bits   ; 90 LEs        ; 30 LEs               ; 60 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|start_process_count[21]                           ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|COUNTER[16]  ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|COUNTER[19] ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP1[2]     ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP2[0]     ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP1[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP2[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP3[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP4[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP5[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP6[1]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP7[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP8[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP9[3]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP3[3]     ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP10[3]   ;
-; 128:1              ; 32 bits   ; 2720 LEs      ; 96 LEs               ; 2624 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[3]                    ;
-; 256:1              ; 8 bits    ; 1360 LEs      ; 8 LEs                ; 1352 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalC[0]                    ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 4 LEs                ; 336 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|JUMLAHtemp[1]                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD1|temp_a[6]                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD2|temp_a[0]                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD3|temp_a[2]                          ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp1[29]                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp1[6]                           ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp1[12]                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp1[1]                           ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp1[30]                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp1[6]                           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|INITIAL[3]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD1|temp_b[7]                          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD2|temp_b[6]                          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|gcdfsm:COUNTGCD|gcd:GCD3|temp_b[6]                          ;
+; 5:1                ; 24 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp2[18]                          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM1|temp2[7]                           ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM2|temp2[15]                          ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |KalkulatorGCDnLCM|gcdlcm:PROCESS_COMPONENT|lcmfsm:COUNTLCM|LCM:LCM3|temp2[29]                          ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|INITIAL[16] ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 30 LEs               ; 60 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|start_process_count[16]                           ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|COUNTER[2]   ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|COUNTER[10] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP1[0]     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP2[2]     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII|BCDfrom8bit:DoubleDabble|TEMP3[3]     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP5[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP1[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP9[2]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP7[0]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP3[2]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP6[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP2[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP10[3]   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP8[3]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble|TEMP4[3]    ;
+; 128:1              ; 32 bits   ; 2720 LEs      ; 96 LEs               ; 2624 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[2]                    ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 18 LEs               ; 68 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[3]                                  ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 8 LEs                ; 1352 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[0]                    ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 4 LEs                ; 336 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|JUMLAHtemp[0]                            ;
 ; 256:1              ; 2 bits    ; 340 LEs       ; 4 LEs                ; 336 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|MODEtemp[1]                              ;
-; 30:1               ; 2 bits    ; 40 LEs        ; 22 LEs               ; 18 LEs                 ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|send_data[2]                                  ;
-; 280:1              ; 32 bits   ; 5952 LEs      ; 32 LEs               ; 5920 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|WAITING[25]                              ;
-; 32:1               ; 27 bits   ; 567 LEs       ; 108 LEs              ; 459 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|COUNTER[9]                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|start_process_count[0]                            ;
-; 128:1              ; 16 bits   ; 1360 LEs      ; 48 LEs               ; 1312 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[1]                    ;
-; 256:1              ; 4 bits    ; 680 LEs       ; 4 LEs                ; 676 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalA[0]                    ;
-; 16:1               ; 7 bits    ; 70 LEs        ; 42 LEs               ; 28 LEs                 ; No         ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state                                             ;
+; 149:1              ; 2 bits    ; 198 LEs       ; 12 LEs               ; 186 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|SEND_DATA[2]                                  ;
+; 280:1              ; 32 bits   ; 5952 LEs      ; 32 LEs               ; 5920 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|WAITING[5]                               ;
+; 32:1               ; 27 bits   ; 567 LEs       ; 108 LEs              ; 459 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|COUNTER[23]                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|start_process_count[31]                           ;
+; 128:1              ; 16 bits   ; 1360 LEs      ; 48 LEs               ; 1312 LEs               ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalA[3]                    ;
+; 256:1              ; 4 bits    ; 680 LEs       ; 4 LEs                ; 676 LEs                ; Yes        ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalA[0]                    ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 56 LEs               ; 40 LEs                 ; No         ; |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -781,7 +701,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII"                                      ;
+; Port Connectivity Checks: "IO:IO_COMPONENT|GCD_ASCII_CONVERTER:GCDtoASCII"                                      ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -790,11 +710,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "IO:IO_COMPONENT|sender:SenderComponent"                                              ;
+; Port Connectivity Checks: "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII"                                      ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
-; s_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; debug ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -838,7 +758,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Nov 28 18:11:26 2023
+    Info: Processing started: Wed Dec 06 09:19:12 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off KalkulatorGCDnLCM -c KalkulatorGCDnLCM
 Info: Found 2 design units, including 1 entities, in source file bcdfrom8bit.vhd
     Info: Found design unit 1: BCDfrom8bit-Behavioral
@@ -911,6 +831,7 @@ Info: Elaborating entity "my_uart_rx" for hierarchy "IO:IO_COMPONENT|my_uart_top
 Info: Elaborating entity "my_uart_tx" for hierarchy "IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter"
 Info: Elaborating entity "receiver" for hierarchy "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT"
 Info: Elaborating entity "sender" for hierarchy "IO:IO_COMPONENT|sender:SenderComponent"
+Warning (10036): Verilog HDL or VHDL warning at sender.vhd(41): object "FIRSTDELAY" assigned a value but never read
 Info: Elaborating entity "LCM_ASCII_CONVERTER" for hierarchy "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII"
 Info: Elaborating entity "BCDfrom32bit" for hierarchy "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDfrom32bit:DoubleDabble"
 Info: Elaborating entity "BCDtoASCII" for hierarchy "IO:IO_COMPONENT|LCM_ASCII_CONVERTER:LCMtoASCII|BCDtoASCII:LCM1"
@@ -955,25 +876,22 @@ Info: Elaborated megafunction instantiation "IO:IO_COMPONENT|receiver:RECEIVER_C
 Info: Registers with preset signals will power-up high
 Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info: Timing-Driven Synthesis is running
-Info: 10 registers lost all their fanouts during netlist optimizations. The first 10 are displayed below.
+Info: 7 registers lost all their fanouts during netlist optimizations. The first 7 are displayed below.
     Info: Register "IO:IO_COMPONENT|my_uart_top:UART|my_uart_tx:transmitter|bps_start_r~en" lost all its fanouts during netlist optimizations.
     Info: Register "IO:IO_COMPONENT|my_uart_top:UART|my_uart_rx:receiver|bps_start_r~en" lost all its fanouts during netlist optimizations.
     Info: Register "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN4internalB[7]" lost all its fanouts during netlist optimizations.
     Info: Register "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN3internalB[7]" lost all its fanouts during netlist optimizations.
     Info: Register "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN2internalB[7]" lost all its fanouts during netlist optimizations.
     Info: Register "IO:IO_COMPONENT|receiver:RECEIVER_COMPONENT|BILANGAN1internalB[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter[3]" lost all its fanouts during netlist optimizations.
-Info: Implemented 1848 device resources after synthesis - the final resource count might be different
+    Info: Register "IO:IO_COMPONENT|fsm_io:fsm_io_COMP|send_counter" lost all its fanouts during netlist optimizations.
+Info: Implemented 1865 device resources after synthesis - the final resource count might be different
     Info: Implemented 3 input pins
-    Info: Implemented 5 output pins
-    Info: Implemented 1840 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 265 megabytes
-    Info: Processing ended: Tue Nov 28 18:11:38 2023
+    Info: Implemented 6 output pins
+    Info: Implemented 1856 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 266 megabytes
+    Info: Processing ended: Wed Dec 06 09:19:24 2023
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 

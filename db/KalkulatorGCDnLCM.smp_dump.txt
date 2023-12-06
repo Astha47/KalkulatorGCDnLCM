@@ -26,75 +26,12 @@ cState.I 0 1 0 0 0 0 0 0 0 1
 cState.J 1 0 0 0 0 0 0 0 0 1 
 
 State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|fsm_io:fsm_io_COMP|state
-Name state.S5 state.S4 state.S3b state.S3 state.S2 state.S1 state.S0 
-state.S0 0 0 0 0 0 0 0 
-state.S1 0 0 0 0 0 1 1 
-state.S2 0 0 0 0 1 0 1 
-state.S3 0 0 0 1 0 0 1 
-state.S3b 0 0 1 0 0 0 1 
-state.S4 0 1 0 0 0 0 1 
-state.S5 1 0 0 0 0 0 1 
-
-State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|nextstate
-Name nextstate.s28 nextstate.s27 nextstate.s26 nextstate.s25 nextstate.s24 nextstate.s23 nextstate.s22 nextstate.s21 nextstate.s20 nextstate.s19 nextstate.s18 nextstate.s17 nextstate.s16 nextstate.s15 nextstate.s14 nextstate.s13 nextstate.s12 nextstate.s11 nextstate.s10 nextstate.s9 nextstate.s8 nextstate.s7 nextstate.s6 nextstate.s5 nextstate.s4 nextstate.s3 nextstate.s2 nextstate.s1 nextstate.s0 
-nextstate.s0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-nextstate.s1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-nextstate.s2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-nextstate.s3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-nextstate.s4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-nextstate.s5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-nextstate.s6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-nextstate.s7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-nextstate.s8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-nextstate.s9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-nextstate.s10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-nextstate.s11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s15 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s16 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s17 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s18 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s19 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s20 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s21 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s22 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s23 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s24 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s25 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s26 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s27 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-nextstate.s28 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-
-State Machine - |KalkulatorGCDnLCM|IO:IO_COMPONENT|sender:SenderComponent|currentstate
-Name currentstate.s28 currentstate.s27 currentstate.s26 currentstate.s25 currentstate.s24 currentstate.s23 currentstate.s22 currentstate.s21 currentstate.s20 currentstate.s19 currentstate.s18 currentstate.s17 currentstate.s16 currentstate.s15 currentstate.s14 currentstate.s13 currentstate.s12 currentstate.s11 currentstate.s10 currentstate.s9 currentstate.s8 currentstate.s7 currentstate.s6 currentstate.s5 currentstate.s4 currentstate.s3 currentstate.s2 currentstate.s1 currentstate.s0 
-currentstate.s0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-currentstate.s1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-currentstate.s2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-currentstate.s3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-currentstate.s4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-currentstate.s5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-currentstate.s6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-currentstate.s7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-currentstate.s8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-currentstate.s9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-currentstate.s10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-currentstate.s11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s15 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s16 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s17 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s18 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s19 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s20 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s21 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s22 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s23 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s24 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s25 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s26 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s27 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-currentstate.s28 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name state.S6 state.S5 state.S4 state.S3b state.S3 state.S2 state.S1 state.S0 
+state.S0 0 0 0 0 0 0 0 0 
+state.S1 0 0 0 0 0 0 1 1 
+state.S2 0 0 0 0 0 1 0 1 
+state.S3 0 0 0 0 1 0 0 1 
+state.S3b 0 0 0 1 0 0 0 1 
+state.S4 0 0 1 0 0 0 0 1 
+state.S5 0 1 0 0 0 0 0 1 
+state.S6 1 0 0 0 0 0 0 1 

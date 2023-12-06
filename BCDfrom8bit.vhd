@@ -9,6 +9,9 @@ entity BCDfrom8bit is
         INPUT8 : in  UNSIGNED (7 downto 0);
         CLK     : in  STD_LOGIC;
         DONE    : out STD_LOGIC;
+
+		DEBUG	: out STD_LOGIC;
+
         OUPUT1  : out UNSIGNED (3 downto 0);
         OUPUT2  : out UNSIGNED (3 downto 0);
         OUPUT3  : out UNSIGNED (3 downto 0)
@@ -22,7 +25,6 @@ architecture Behavioral of BCDfrom8bit is
     signal TEMP1        : UNSIGNED (3 downto 0);
     signal TEMP2        : UNSIGNED (3 downto 0);
     signal TEMP3        : UNSIGNED (3 downto 0);
-    
     signal InternalDone : STD_LOGIC := '1';
 
 begin
@@ -35,13 +37,16 @@ begin
                 TEMP1 <= (others => '0');
                 TEMP2 <= (others => '0');
                 TEMP3 <= (others => '0');
-                
             else
                 if (COUNTER = 0) then
                     if START = '1' then
 						COUNTER <= COUNTER + 1;
 						INITIAL <= INPUT8;
 						InternalDone <= '0';
+						TEMP1 <= (others => '0');
+						TEMP2 <= (others => '0');
+						TEMP3 <= (others => '0');
+
 					end if;
                 elsif ((COUNTER >= 1) and (COUNTER <= 8)) then
                         if EVALUATE = 1 then
@@ -60,7 +65,7 @@ begin
 							TEMP3(2) <= TEMP3(1);
 							TEMP3(1) <= TEMP3(0);
 							TEMP3(0) <= INITIAL(7);
-													
+
 							INITIAL(7) <= INITIAL(6);
 							INITIAL(6) <= INITIAL(5);
 							INITIAL(5) <= INITIAL(4);
@@ -102,6 +107,16 @@ begin
 	OUPUT1  <= TEMP1;
 	OUPUT2  <= TEMP2;
 	OUPUT3  <= TEMP3;
+
+	process(TEMP1)
+	begin
+		if TEMP1 = "0001" then
+			DEBUG <= '0';
+		else
+			DEBUG <= '1';
+		end if;
+	end process;
+	
 
 
 end Behavioral;

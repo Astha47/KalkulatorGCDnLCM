@@ -24,7 +24,7 @@ entity IO is
 		PROCESSING	    	: OUT std_logic;
 		CONVERTING	    	: OUT std_logic;
 
-		SENDDEBUG			: IN std_logic;
+		-- SENDDEBUG			: IN std_logic;
 
 		-- DEBUGNILAI			: OUT unsigned (7 downto 0);
 
@@ -195,10 +195,10 @@ Architecture RTL of IO is
 	signal receive_data : std_logic_vector(7 downto 0);
 	signal temp_data	: std_logic_vector(7 downto 0) := "00000000";
 	signal receive_c	: std_logic;
+	SIGNAL SEND_SIGNAL	: std_logic;
 	
 	-- SIGNAL DEBUG
 	signal RECEIVE_SIGNAL		: std_logic;
-	SIGNAL SEND_SIGNAL	: std_logic;
 	signal DONE_RECEIVER : std_logic; -- TO FSM
 	signal ERROR_RECEIVER : std_logic; -- TO FSM
 	--SIGNAL DEBUGBCD : UNSIGNED (7 downto 0);
@@ -242,7 +242,6 @@ begin
 			clk 			=> clk,
 			rst_n 			=> rst_n,
 			send 			=> SEND_SIGNAL,
-			send 			=> SENDDEBUG,
 			sending			=> TX_EN,
 			send_data		=> data_send,
 			receive 		=> RECEIVE_SIGNAL,
